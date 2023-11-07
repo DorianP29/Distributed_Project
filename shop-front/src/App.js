@@ -1,23 +1,24 @@
 import "./App.css";
-import React from "react";
-import { PRODUCTS } from "./produits";
-import { Product } from "./produit";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Navbar } from "./navbar";
+import { Shop } from "./shop";
+import { Cart } from "./cart";
+import { ShopContextProvider } from "./shop-context";
 
 function App() {
   return (
-    <div className="shop">
-    <div className="shopTitle">
-      <h1>Shop</h1>
+    <div className="App">
+      <ShopContextProvider>
+        <Router>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Shop />} />
+            <Route path="/cart" element={<Cart />} />
+          </Routes>
+        </Router>
+      </ShopContextProvider>
     </div>
-
-    <div className="products">
-      {PRODUCTS.map((product) => (
-        <Product data={product} />
-      ))}
-    </div>
-  </div>);
-
-      
+  );
 }
 
 export default App;
