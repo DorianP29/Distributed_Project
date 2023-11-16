@@ -1,0 +1,21 @@
+/* Product.css */
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px; /* Add gap between products */
+  }
+  
+  .product {
+    
+    padding: 10px;
+    /* Add margin to create space between products */
+    margin: 10px; /* Adjust margin as needed */
+  }
+  
+  .product-image {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+  }
+  
